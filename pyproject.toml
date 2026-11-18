@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rqf-ssl"
+version = "0.1.0"
+description = "Self-supervised prediction with Recursive Quadrature Filters"
+requires-python = ">=3.12"
+dependencies = ["torch>=2.5,<3", "numpy>=1.26,<3", "scikit-learn>=1.5,<2"]
+
+[project.optional-dependencies]
+preprocessing = ["mne>=1.8,<2", "scipy>=1.13,<2"]
+cuda = ["triton>=3,<4; platform_system == 'Linux'"]
+test = ["pytest>=8,<10", "mne>=1.8,<2", "edfio>=0.4,<1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

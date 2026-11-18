@@ -1,0 +1,10 @@
+{
+  "width": 64,
+  "layers": 4,
+  "sample_rate": 128.0,
+  "sequence_length": 12800,
+  "window_length": 128,
+  "horizon": 2,
+  "classes": 2,
+  "fbt_dtype": "bf16"
+}
